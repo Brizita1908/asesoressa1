@@ -1,0 +1,76 @@
+AsesoresSA\MainBundle\Entity\Transaccion:
+    type: entity
+    table: transaccion
+    indexes:
+        idUsuario:
+            columns:
+                - idUsuario
+        siglaMovimiento:
+            columns:
+                - siglaMovimiento
+    id:
+        idtransaccion:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idTransaccion
+            generator:
+                strategy: IDENTITY
+    fields:
+        mediosolicitud:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: medioSolicitud
+        numerocartasolicitud:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: numeroCartaSolicitud
+        fechasolicitud:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: fechaSolicitud
+        cartafirmadaentrega:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: cartaFirmadaEntrega
+        fechaentrega:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: fechaEntrega
+        estadotransaccion:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: estadoTransaccion
+    manyToOne:
+        idusuario:
+            targetEntity: Usuarios
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idUsuario:
+                    referencedColumnName: idUsuario
+            orphanRemoval: false
+        siglamovimiento:
+            targetEntity: Movimiento
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                siglaMovimiento:
+                    referencedColumnName: siglaMovimiento
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

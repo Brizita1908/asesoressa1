@@ -1,0 +1,14 @@
+AsesoresSA\MainBundle\Entity\Perfil:
+    type: entity
+    table: perfil
+    id:
+        rolperfil:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            id: true
+            column: rolPerfil
+            generator:
+                strategy: IDENTITY
+    lifecycleCallbacks: {  }

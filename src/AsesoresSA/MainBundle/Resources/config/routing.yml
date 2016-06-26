@@ -1,0 +1,84 @@
+asesores_sa_main_homepage:
+    path:     /AsesoresSA
+    defaults: { _controller: AsesoresSAMainBundle:Default:index }
+    
+#Rutas de Vistas    
+    
+asesores_sa_inicio:
+    path:     /index
+    defaults: { _controller: AsesoresSAMainBundle:Usuarios:indexUsuario }
+    
+    #RAMO
+asesores_sa_nuevoRamo:
+    path:     /ramo/nuevo
+    defaults: { _controller: AsesoresSAMainBundle:Ramo:nuevoRamo }
+    
+asesores_sa_editarRamo:
+    path:     /ramo/editar/{siglaramo}
+    defaults: { _controller: AsesoresSAMainBundle:Ramo:editarRamo }
+    
+asesores_sa_eliminaRamo:
+    path:     /ramo/eliminar/{siglaramo}
+    defaults: { _controller: AsesoresSAMainBundle:Ramo:eliminaRamo }
+
+asesores_sa_listarRamo:
+    path:     /ramo/listar
+    defaults: { _controller: AsesoresSAMainBundle:Ramo:listarRamo }
+    
+    #MOVIMIENTO
+asesores_sa_nuevoMovimiento:
+    path:     /movimiento/nuevo
+    defaults: { _controller: AsesoresSAMainBundle:Movimiento:nuevoMovimiento }
+    
+asesores_sa_editarMovimiento:
+    path:     /movimiento/editar/{siglamovimiento}
+    defaults: { _controller: AsesoresSAMainBundle:Movimiento:editMovimiento}
+    
+asesores_sa_listarMovimiento:
+    path:     /movimiento/listar
+    defaults: { _controller: AsesoresSAMainBundle:Movimiento:listarMovimiento}
+    
+    #ANEXO
+asesores_sa_nuevoAnexo:
+    path:     /anexo/nuevo
+    defaults: { _controller: AsesoresSAMainBundle:Anexo:nuevoAnexo }
+    
+    #ASEGURADORA
+asesores_sa_nuevaAseguradora:
+    path:     /aseguradora/nuevo
+    defaults: { _controller: AsesoresSAMainBundle:Aseguradora:nuevaAseguradora }
+    
+asesores_sa_editarAseguradora:
+    path:     /aseguradora/editar/{siglaaseguradora}
+    defaults: { _controller: AsesoresSAMainBundle:Aseguradora:editAseguradora }
+
+asesores_sa_listarAseguradora:
+    path:     /aseguradora/listar
+    defaults: { _controller: AsesoresSAMainBundle:Aseguradora:listarAseguradora }
+    
+    
+    #CLIENTE
+asesores_sa_nuevoCliente:
+    path:     /cliente/nuevo
+    defaults: { _controller: AsesoresSAMainBundle:Cliente:nuevoCliente }
+    
+asesores_sa_editarCliente:
+    path:     /cliente/editar/{filecliente}
+    defaults: { _controller: AsesoresSAMainBundle:Cliente:editCliente }
+    
+asesores_sa_listarCliente:
+    path:     /cliente/listar
+    defaults: { _controller: AsesoresSAMainBundle:Cliente:listarCliente }
+
+    #USUARIO
+asesores_sa_nuevoUsuario:
+    path:     /usuario/nuevo
+    defaults: { _controller: AsesoresSAMainBundle:Usuarios:nuevoUsuario }
+    
+asesores_sa_listarUsuario:
+    path:     /usuario/listar
+    defaults: { _controller: AsesoresSAMainBundle:Usuarios:listarUsuario }
+    
+asesores_sa_editarUsuario:
+    path:     /usuario/editar/{idusuario}
+    defaults: { _controller: AsesoresSAMainBundle:Usuarios:editarUsuario }

@@ -1,0 +1,29 @@
+AsesoresSA\MainBundle\Entity\Transaccionanexo:
+    type: entity
+    table: transaccionanexo
+    indexes:
+        numeroAnexo:
+            columns:
+                - numeroAnexo
+    id: {  }
+    oneToOne:
+        idtransaccion:
+            targetEntity: Transaccion
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idTransaccion:
+                    referencedColumnName: idTransaccion
+            orphanRemoval: false
+    manyToOne:
+        numeroanexo:
+            targetEntity: Anexo
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                numeroAnexo:
+                    referencedColumnName: numeroAnexo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

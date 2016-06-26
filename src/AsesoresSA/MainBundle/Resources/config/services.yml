@@ -1,0 +1,4 @@
+services:
+#    asesores_sa_main.example:
+#        class: AsesoresSA\MainBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

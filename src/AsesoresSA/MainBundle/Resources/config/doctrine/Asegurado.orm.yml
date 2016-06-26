@@ -1,0 +1,47 @@
+AsesoresSA\MainBundle\Entity\Asegurado:
+    type: entity
+    table: asegurado
+    indexes:
+        numeroAnexo:
+            columns:
+                - numeroAnexo
+    id:
+        icasegurado:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            id: true
+            column: icASegurado
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombresasegurado:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            column: nombresAsegurado
+        apellidosasegurado:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            column: apellidosASegurado
+        valorasegurado:
+            type: decimal
+            nullable: true
+            precision: 15
+            scale: 2
+            column: valorAsegurado
+    manyToOne:
+        numeroanexo:
+            targetEntity: Anexo
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                numeroAnexo:
+                    referencedColumnName: numeroAnexo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

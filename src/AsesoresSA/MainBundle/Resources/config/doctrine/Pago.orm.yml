@@ -1,0 +1,50 @@
+AsesoresSA\MainBundle\Entity\Pago:
+    type: entity
+    table: pago
+    id:
+        idpago:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            id: true
+            column: idPago
+            generator:
+                strategy: IDENTITY
+    fields:
+        tasapago:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 2
+            column: tasaPago
+        primapago:
+            type: decimal
+            nullable: true
+            precision: 15
+            scale: 2
+            column: primaPago
+        porcentajecomisionpago:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 2
+            column: porcentajeComisionPago
+        comisionpago:
+            type: decimal
+            nullable: true
+            precision: 15
+            scale: 2
+            column: comisionPago
+        metodopago:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: metodoPago
+        numerocuotas:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: numeroCuotas
+    lifecycleCallbacks: {  }

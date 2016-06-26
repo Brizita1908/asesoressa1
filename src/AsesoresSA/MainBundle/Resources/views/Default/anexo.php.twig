@@ -1,0 +1,56 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}Registro de Anexo{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6 col-md-offset-3">
+                    <h3 class="text-center">Registro de Anexo</h3>
+                    {{ form_start(form, {'method': 'GET', 'id':'anexo'})}}
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.numeroanexo)}}</div>
+                        <div class="form_label">{{form_label(form.numeroanexo, 'Numero Anexo', {'label_attr': {'for': 'numeroanexo'}})}}</div>
+                        <div class="form_input">{{form_widget(form.numeroanexo, { 'attr': {'class': 'form-control', 'placeholder':'Numero Anexo'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.numeropoliza)}}</div>
+                        <div class="form_label">{{form_label(form.numeropoliza, 'Numero Poliza', {'label_attr': {'for': 'numeropoliza'}})}}</div>
+                        <div class="form_input">{{form_widget(form.numeropoliza, { 'attr': {'class': 'form-control', 'placeholder':'Numero Poliza'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.siglaramo)}}</div>
+                        <div class="form_label">{{form_label(form.siglaramo, 'Ramo', {'label_attr': {'for': 'siglaramo'}})}}</div>
+                        <div class="form_input">{{form_widget(form.siglaramo, { 'attr': {'class': 'form-control', 'placeholder':'Ramo'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.iniciovigenciaanexo)}}</div>
+                        <div class="form_label">{{form_label(form.iniciovigenciaanexo, 'Inicio de Vigencia Anexo', {'label_attr': {'for': 'iniciovigenciaanexo'}})}}</div>
+                        <div class="form_input">{{form_widget(form.iniciovigenciaanexo, { 'attr': {'class': 'form-control', 'placeholder':'Inicio de Vigencia Anexo'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.finvigenciaanexo)}}</div>
+                        <div class="form_label">{{form_label(form.finvigenciaanexo, 'Fin de Vigencia Anexo', {'label_attr': {'for': 'finvigenciaanexo'}})}}</div>
+                        <div class="form_input">{{form_widget(form.finvigenciaanexo, { 'attr': {'class': 'form-control', 'placeholder':'Fin de Vigencia Anexo'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.valortotalaseguradoanexo)}}</div>
+                        <div class="form_label">{{form_label(form.valortotalaseguradoanexo, 'Valor Total Asegurado en el Anexo', {'label_attr': {'for': 'valortotalaseguradoanexo'}})}}</div>
+                        <div class="form_input">{{form_widget(form.valortotalaseguradoanexo, { 'attr': {'class': 'form-control', 'placeholder':'Valor Total Asegurado en el Anexo'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.idpago)}}</div>
+                        <div class="form_label">{{form_label(form.idpago, 'Pago Anexo', {'label_attr': {'for': 'idpago'}})}}</div>
+                        <div class="form_input">{{form_widget(form.idpago, { 'attr': {'class': 'form-control', 'placeholder':'Pago Anexo'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-btn">
+                        {{form_widget(form.Guardar, { 'attr': {'class': 'btn btn-primary btn-style', 'id':'btn-guardar'} })}}
+                        {{form_widget(form.Cancelar, { 'attr': {'class': 'btn btn-default btn-style', 'id':'btn-cancelar'} })}}
+                    </div>
+                    {{form_end(form)}}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

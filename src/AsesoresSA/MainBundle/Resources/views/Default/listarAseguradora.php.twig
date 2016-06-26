@@ -1,0 +1,35 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}Aseguradoras{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-4 col-md-offset-4">
+                    <h3 class="text-center">Aseguradoras</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Sigla</td>
+                                <td>Nombre</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for aseg in aseguradoras %}
+                                <tr>
+                                    <td>{{ aseg.siglaaseguradora }}</td>
+                                    <td>{{ aseg.nombreaseguradora }}</td>
+                                    
+                                    <td><a class="link-btn" href="{{ path('asesores_sa_editarAseguradora', {'siglaaseguradora': aseg.siglaaseguradora}) }}">Modificar</a></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                        
+                    <a href="{{ path('asesores_sa_nuevaAseguradora') }}" class="btn btn-primary" role="button">Nuevo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

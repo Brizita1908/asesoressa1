@@ -1,0 +1,47 @@
+AsesoresSA\MainBundle\Entity\Cuotas:
+    type: entity
+    table: cuotas
+    indexes:
+        idPago:
+            columns:
+                - idPago
+    id:
+        numerocuota:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            id: true
+            column: numeroCuota
+            generator:
+                strategy: IDENTITY
+    fields:
+        primacuota:
+            type: decimal
+            nullable: true
+            precision: 15
+            scale: 2
+            column: primaCuota
+        valorcuota:
+            type: decimal
+            nullable: true
+            precision: 15
+            scale: 2
+            column: valorCuota
+        fechapagocuota:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: fechaPagoCuota
+    manyToOne:
+        idpago:
+            targetEntity: Pago
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idPago:
+                    referencedColumnName: idPago
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

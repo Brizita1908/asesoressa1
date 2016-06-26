@@ -1,0 +1,27 @@
+AsesoresSA\MainBundle\Entity\Ramo:
+    type: entity
+    table: ramo
+    id:
+        siglaramo:
+            type: string
+            nullable: false
+            length: 5
+            fixed: false
+            id: true
+            column: siglaRamo
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombreramo:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: nombreRamo
+        tiporamo:
+            type: string
+            nullable: true
+            length: 1
+            fixed: false
+            column: tipoRamo
+    lifecycleCallbacks: {  }

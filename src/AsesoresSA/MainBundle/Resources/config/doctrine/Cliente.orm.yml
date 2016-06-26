@@ -1,0 +1,39 @@
+AsesoresSA\MainBundle\Entity\Cliente:
+    type: entity
+    table: cliente
+    id:
+        filecliente:
+            type: string
+            nullable: false
+            length: 5
+            fixed: false
+            id: true
+            column: fileCliente
+            generator:
+                strategy: IDENTITY
+    fields:
+        idcliente:
+            type: string
+            nullable: true
+            length: 13
+            fixed: false
+            column: idCLiente
+        nombrescliente:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: nombresCliente
+        apellidoscliente:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: apellidosCliente
+        nombrelegalcliente:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: nombreLegalCliente
+    lifecycleCallbacks: {  }

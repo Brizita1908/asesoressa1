@@ -1,0 +1,36 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}Ramos{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6 col-md-offset-3">
+                    <h3 class="text-center">Ramos</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Sigla</td>
+                                <td>Nombre</td>
+                                <td>Tipo</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ramo in ramos %}
+                                <tr>
+                                    <td>{{ ramo.siglaramo }}</td>
+                                    <td>{{ ramo.nombreramo }}</td>
+                                    <td>{{ ramo.tiporamo }}</td>
+                                    <td><a class="link-btn" href="{{ path('asesores_sa_editarRamo', {'siglaramo': ramo.siglaramo}) }}">Modificar</a></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                        
+                    <a href="{{ path('asesores_sa_nuevoRamo') }}" class="btn btn-primary" role="button">Nuevo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

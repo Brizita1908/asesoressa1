@@ -1,0 +1,40 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}Clientes{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-8 col-md-offset-2">
+                    <h3 class="text-center">Clientes</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>File</td>
+                                <td>CI / RUC</td>
+                                <td>Nombres</td>
+                                <td>Apellidos</td>
+                                <td>Nombre Legal</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for cli in clientes %}
+                                <tr>
+                                    <td>{{ cli.filecliente }}</td>
+                                    <td>{{ cli.idcliente }}</td>
+                                    <td>{{ cli.nombrescliente }}</td>
+                                    <td>{{ cli.apellidoscliente }}</td>
+                                    <td>{{ cli.nombrelegalcliente }}</td>
+                                    <td><a class="link-btn" href="{{ path('asesores_sa_editarCliente', {'filecliente': cli.filecliente}) }}">Modificar</a></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                        
+                    <a href="{{ path('asesores_sa_nuevoCliente') }}" class="btn btn-primary" role="button">Nuevo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

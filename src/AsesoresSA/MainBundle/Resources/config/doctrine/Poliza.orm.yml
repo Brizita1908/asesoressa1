@@ -1,0 +1,40 @@
+AsesoresSA\MainBundle\Entity\Poliza:
+    type: entity
+    table: poliza
+    indexes:
+        fileCliente:
+            columns:
+                - fileCliente
+        siglaAseguradora:
+            columns:
+                - siglaAseguradora
+    id:
+        numeropoliza:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            id: true
+            column: numeroPoliza
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        filecliente:
+            targetEntity: Cliente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fileCliente:
+                    referencedColumnName: fileCliente
+            orphanRemoval: false
+        siglaaseguradora:
+            targetEntity: Aseguradora
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                siglaAseguradora:
+                    referencedColumnName: siglaAseguradora
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

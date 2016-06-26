@@ -1,0 +1,52 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}Registro de Cliente{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6 col-md-offset-3">
+                    <h3 class="text-center">Registro de Cliente</h3>
+                    {{ form_start(form)}}
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.filecliente)}}</div>
+                        <div class="form_label">{{form_label(form.filecliente, 'File', {'label_attr': {'for': 'filecliente'}})}}</div>
+                        <div class="form_input">{{form_widget(form.filecliente, { 'attr': {'class': 'form-control', 'placeholder':'File'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.idcliente)}}</div>
+                        <div class="form_label">{{form_label(form.idcliente, 'Numero de Cedula o RUC', {'label_attr': {'for': 'idcliente'}})}}</div>
+                        <div class="form_input">{{form_widget(form.idcliente, { 'attr': {'class': 'form-control', 'placeholder':'Numero de Cedula o RUC'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.nombrescliente)}}</div>
+                        <div class="form_label">{{form_label(form.nombrescliente, 'Nombres', {'label_attr': {'for': 'nombrescliente'}})}}</div>
+                        <div class="form_input">{{form_widget(form.nombrescliente, { 'attr': {'class': 'form-control', 'placeholder':'Nombres'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.apellidoscliente)}}</div>
+                        <div class="form_label">{{form_label(form.apellidoscliente, 'Apellidos', {'label_attr': {'for': 'apellidoscliente'}})}}</div>
+                        <div class="form_input">{{form_widget(form.apellidoscliente, { 'attr': {'class': 'form-control', 'placeholder':'Apellidos'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.nombrelegalcliente)}}</div>
+                        <div class="form_label">{{form_label(form.nombrelegalcliente, 'Nombre Legal', {'label_attr': {'for': 'nombrelegalcliente'}})}}</div>
+                        <div class="form_input">{{form_widget(form.nombrelegalcliente, { 'attr': {'class': 'form-control', 'placeholder':'Nombre Legal'} })}}</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Nota: 
+                            <br> - Se debe llenar en Nombre Legal e ingresar un RUC en caso de que el cliente sea una empresa
+                            <br> - Se debe llenar en Nombres y Apellidos e ingresar Número de Cédula en caso de que el cliente sea una persona natural.
+                        </label>
+                    </div>
+                    <div class="form_bloque form-btn">
+                        {{form_widget(form.Guardar, { 'attr': {'class': 'btn btn-primary btn-style', 'id':'btn-guardar'} })}}
+                        <a href="{{ path('asesores_sa_listarCliente') }}" class="btn btn-primary" role="button">Ver Clientes</a>
+                    </div>
+                    {{form_end(form)}}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}Registro de Aseguradora{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6 col-md-offset-3">
+                    <h3 class="text-center">Registro de Aseguradora</h3>
+                    {{ form_start(form)}}
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.siglaaseguradora)}}</div>
+                        <div class="form_label">{{form_label(form.siglaaseguradora, 'Sigla', {'label_attr': {'for': 'siglaaseguradora'}})}}</div>
+                        <div class="form_input">{{form_widget(form.siglaaseguradora, { 'attr': {'class': 'form-control', 'placeholder':'Sigla'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.nombreaseguradora)}}</div>
+                        <div class="form_label">{{form_label(form.nombreaseguradora, 'Nombre', {'label_attr': {'for': 'nombreaseguradora'}})}}</div>
+                        <div class="form_input">{{form_widget(form.nombreaseguradora, { 'attr': {'class': 'form-control', 'placeholder':'Nombre'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-btn">
+                        {{form_widget(form.Guardar, { 'attr': {'class': 'btn btn-primary btn-style', 'id':'btn-guardar'} })}}
+                        <a href="{{ path('asesores_sa_listarAseguradora') }}" class="btn btn-primary" role="button">Ver Aseguradoras</a>
+                    </div>
+                    {{form_end(form)}}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

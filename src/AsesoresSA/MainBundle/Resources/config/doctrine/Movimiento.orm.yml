@@ -1,0 +1,21 @@
+AsesoresSA\MainBundle\Entity\Movimiento:
+    type: entity
+    table: movimiento
+    id:
+        siglamovimiento:
+            type: string
+            nullable: false
+            length: 5
+            fixed: false
+            id: true
+            column: siglaMovimiento
+            generator:
+                strategy: IDENTITY
+    fields:
+        estadomovimiento:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: estadoMovimiento
+    lifecycleCallbacks: {  }

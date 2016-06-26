@@ -1,0 +1,41 @@
+AsesoresSA\MainBundle\Entity\Objeto:
+    type: entity
+    table: objeto
+    indexes:
+        numeroAnexo:
+            columns:
+                - numeroAnexo
+    id:
+        idobjeto:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            id: true
+            column: idObjeto
+            generator:
+                strategy: IDENTITY
+    fields:
+        valorobjeto:
+            type: decimal
+            nullable: true
+            precision: 15
+            scale: 2
+            column: valorObjeto
+        descripcionobjeto:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: descripcionObjeto
+    manyToOne:
+        numeroanexo:
+            targetEntity: Anexo
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                numeroAnexo:
+                    referencedColumnName: numeroAnexo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

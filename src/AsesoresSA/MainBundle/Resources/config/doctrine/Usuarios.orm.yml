@@ -1,0 +1,35 @@
+AsesoresSA\MainBundle\Entity\Usuarios:
+    type: entity
+    table: usuarios
+    indexes:
+        rolPerfil:
+            columns:
+                - rolPerfil
+    id:
+        idusuario:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            id: true
+            column: idUsuario
+            generator:
+                strategy: IDENTITY
+    fields:
+        contrasenausuario:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: contrasenaUsuario
+    manyToOne:
+        rolperfil:
+            targetEntity: Perfil
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                rolPerfil:
+                    referencedColumnName: rolPerfil
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

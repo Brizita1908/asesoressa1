@@ -1,0 +1,71 @@
+AsesoresSA\MainBundle\Entity\Anexo:
+    type: entity
+    table: anexo
+    indexes:
+        numeroPoliza:
+            columns:
+                - numeroPoliza
+        siglaRamo:
+            columns:
+                - siglaRamo
+        idPago:
+            columns:
+                - idPago
+    id:
+        numeroanexo:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            id: true
+            column: numeroAnexo
+            generator:
+                strategy: IDENTITY
+    fields:
+        iniciovigenciaanexo:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: inicioVigenciaAnexo
+        finvigenciaanexo:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: finVigenciaAnexo
+        valortotalaseguradoanexo:
+            type: decimal
+            nullable: true
+            precision: 15
+            scale: 2
+            column: valorTotalAseguradoAnexo
+    manyToOne:
+        numeropoliza:
+            targetEntity: Poliza
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                numeroPoliza:
+                    referencedColumnName: numeroPoliza
+            orphanRemoval: false
+        siglaramo:
+            targetEntity: Ramo
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                siglaRamo:
+                    referencedColumnName: siglaRamo
+            orphanRemoval: false
+        idpago:
+            targetEntity: Pago
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idPago:
+                    referencedColumnName: idPago
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

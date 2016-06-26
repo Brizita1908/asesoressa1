@@ -1,0 +1,58 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Bienvenido Asesores SA{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/asesoressamain/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/asesoressamain/css/estilos.css') }}" />
+{% endblock %}
+
+
+{% block sidebar %}
+    <nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="{{ path('asesores_sa_inicio') }}"><img src="{{ asset('bundles/asesoressamain/images/asesoresSA1.jpg') }}" class="img-responsive img-thumbnail brand" alt="Brand Responsive image" /></a>
+	    </div>
+	
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li class="active"><a href="#">Inicio</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Datos <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+                    <li><a href="{{ path('asesores_sa_listarAseguradora') }}">Aseguradoras</a></li>
+	            <li><a href="{{ path('asesores_sa_listarCliente') }}">Clientes</a></li>
+	            <li><a href="{{ path('asesores_sa_listarMovimiento') }}">Movimientos</a></li>
+	            <li><a href="{{ path('asesores_sa_listarRamo') }}">Ramos</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+{% endblock %}
+        
+
+
+{% block body %}
+	
+{% endblock %}
+
+        
+        
+    
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/asesoressamain/js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/asesoressamain/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/asesoressamain/js/jquery.validate.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/asesoressamain/js/additional-methods.js') }}"></script>
+{% endblock %}

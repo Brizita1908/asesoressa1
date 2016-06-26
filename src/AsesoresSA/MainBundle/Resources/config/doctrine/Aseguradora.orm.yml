@@ -1,0 +1,21 @@
+AsesoresSA\MainBundle\Entity\Aseguradora:
+    type: entity
+    table: aseguradora
+    id:
+        siglaaseguradora:
+            type: string
+            nullable: false
+            length: 5
+            fixed: false
+            id: true
+            column: siglaAseguradora
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombreaseguradora:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            column: nombreAseguradora
+    lifecycleCallbacks: {  }

@@ -1,0 +1,48 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}Asesores S.A.{% endblock %}
+
+{% block sidebar %}{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <div class="col-md-4 img-logo"><br>
+                        <img src="{{ asset('bundles/asesoressamain/images/asesoresI.jpg') }}" class="img-responsive img-thumbnail" alt="Responsive image" />
+
+                    </div>
+                    <div class="col-md-2 col-md-offset-6 img-logo"><br>
+                        <img src="{{ asset('bundles/asesoressamain/images/asesoresII.jpg') }}" class="img-responsive img-thumbnail" alt="Responsive image" />
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-md-offset-3">
+                    
+                    <h1 class="text-center">Bienvenido al Sistema</h1>
+                    <h3 class="text-center">Inicia Sesion</h3>
+                    {{ form_start(form, {'method': 'GET', 'id':'usuario'})}}
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.idusuario)}}</div>
+                        <div class="form_label">{{form_label(form.idusuario, 'Nombre de Usuario', {'label_attr': {'for': 'idusuario'}})}}</div>
+                        <div class="form_input">{{form_widget(form.idusuario, { 'attr': {'class': 'form-control', 'placeholder':'Usuario'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.contrasenausuario)}}</div>
+                        <div class="form_label">{{form_label(form.contrasenausuario, 'Contraseña', {'label_attr': {'for': 'contrasenausuario'}})}}</div>
+                        <div class="form_input">{{form_widget(form.contrasenausuario, { 'attr': {'class': 'form-control', 'placeholder':'Contraseña'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        
+                       
+                    </div>
+                    <div class="form_bloque form-btn">
+                        {{form_widget(form.Ingresar, { 'attr': {'class': 'btn btn-primary btn-style', 'id':'btn-ingresar'} })}}
+                        
+                    </div>
+                    {{form_end(form)}}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

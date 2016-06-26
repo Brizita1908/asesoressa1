@@ -1,0 +1,31 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}Registro de Movimiento{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6 col-md-offset-3">
+                    <h3 class="text-center">Registro de Movimiento</h3>
+                    {{ form_start(form)}}
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.siglamovimiento)}}</div>
+                        <div class="form_label">{{form_label(form.siglamovimiento, 'Sigla', {'label_attr': {'for': 'sigla'}})}}</div>
+                        <div class="form_input">{{form_widget(form.siglamovimiento, { 'attr': {'class': 'form-control', 'placeholder':'Sigla'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-group">
+                        <div class="form_error">{{form_errors(form.estadomovimiento)}}</div>
+                        <div class="form_label">{{form_label(form.estadomovimiento, 'Estado', {'label_attr': {'for': 'estado'}})}}</div>
+                        <div class="form_input">{{form_widget(form.estadomovimiento, { 'attr': {'class': 'form-control', 'placeholder':'Estado'} })}}</div>
+                    </div>
+                    <div class="form_bloque form-btn">
+                        {{form_widget(form.Guardar, { 'attr': {'class': 'btn btn-primary btn-style', 'id':'btn-guardar'} })}}
+                        <a href="{{ path('asesores_sa_listarMovimiento') }}" class="btn btn-primary" role="button">Ver Movimientos</a>
+                    </div>
+                    {{form_end(form)}}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
